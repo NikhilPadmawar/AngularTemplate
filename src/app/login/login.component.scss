@@ -1,0 +1,202 @@
+
+  .slideBox {
+    width: 80%;
+    max-height: 80%;
+    height: 80%;
+    overflow: hidden;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+
+  @media all and (max-width: 600px) {
+    .left{
+      width: 100%;
+      height: 50%;
+      background: #2C3034;
+      left: 0;
+      position: absolute;
+      &__style
+      {
+      height: 90%;
+      width: 90%;
+      }
+    }
+    .right{
+      width: 100%;
+      height: 50%;
+      background: #f9f9f9;
+      right: 0;
+      position: absolute;
+      &__style
+      {
+      height: 90%;
+      width: 90%;
+      }
+    }
+
+    & .check{
+      position: relative;
+      top: 3px;
+      font-size: 13px;
+    }
+
+    .contentB {
+      top: 145%;
+      & input {
+        padding: 5px 0;
+        margin-top: 5px;
+      }
+    }
+    .contentT{
+      top: 48%;
+      z-index: 1;
+      & input {
+        padding: 5px 0;
+        margin-top: 5px;
+      }
+    }
+
+    h2{
+      margin-bottom: 0px;
+    }
+    
+  }
+
+  @media all and (min-width: 600px) {
+    .left {
+      width: 50%;
+      height: 100%;
+      background: #2C3034;
+      left: 0;
+      position: absolute;
+  
+      &__style
+      {
+      height: 90%;
+      width: 90%;
+      }
+    }
+
+    & .check{
+      position: relative;
+      top: 5px;
+    }
+  
+    .right {
+      width: 50%;
+      height: 100%;
+      background: #f9f9f9;
+      right: 0;
+      position: absolute;
+  
+      &__style
+      {
+      height: 90%;
+      width: 90%;
+      }
+    }
+
+    .contentB,.contentT{
+      top:40%;
+      
+    & input {
+      padding: 8px 0;
+      margin-top: 10px;
+    }
+    }
+  }
+
+  
+  .contentB,.contentT {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    & h2{
+      color: #ff5145;
+    }
+
+    & form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    & input {
+      background: transparent;
+      border: 0;
+      outline: 0;
+      border-bottom: 1px solid #45494C;
+      font-size: 14px;
+      color: #959595;
+      font-weight: 400;
+
+      
+      &.ng-dirty.ng-invalid{
+        border-bottom: 1px solid lightcoral;
+      }
+
+      &.ng-valid{
+        border-bottom: 1px solid rgb(20, 226, 20);
+      }
+    }
+    
+    & .check{
+      color:lightcoral;
+    }
+  }
+
+  button {
+    background: #ff5145;
+    padding: 10px 10px;
+    width: auto;
+    font-weight: 600;
+    text-transform:  uppercase;
+    font-size: 14px;
+    color: #fff;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    border: 0;
+    outline: 0;
+    margin-top: 1rem;
+    transition: all 0.25s;
+
+    &#click:hover {
+      background: #ff7a45;
+      box-shadow: 0 4px 7px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    &.off {
+      border: none;
+      color: #ff5145;
+      box-shadow: none;
+      padding-bottom: 2px;
+      display: inline-block;
+      background-color: transparent;
+      cursor: pointer;
+      transition: all .2s;
+
+      & span {
+          margin-left: 3px;
+          transition: margin-left .2s;
+      }
+
+      &:hover {
+          span {
+              margin-left: 8px;
+          }
+      }
+
+      &:focus {
+          outline: none;
+          animation: pulsate 1s infinite;
+      }
+  }
+  }

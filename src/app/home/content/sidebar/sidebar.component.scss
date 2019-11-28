@@ -1,0 +1,88 @@
+.sidebar {
+  overflow: auto;
+  min-height: 37rem;
+  max-height: 37rem;
+  width: 10rem;
+  position: relative;
+  top:1rem;
+  left: -200px;
+  background-color: #2C3034;
+
+  & li{
+    list-style: none;
+  }
+
+  &_dropdown-container{
+    display: none;
+  }
+
+  &::-webkit-scrollbar
+  {
+      width: 5px;
+      background-color: #F5F5F5;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+      background-color: lightgray;
+  }
+
+  & a{
+    display: block;
+    color: white;
+    padding: 0.9rem;
+    text-decoration: none;
+
+    &.active {
+        background-color: #ff5145;
+        color: white;
+      }
+
+    &:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
+  }
+}
+
+
+.hamburger:after {
+	content:"\2630"; /* hamburger icon */
+  font-size: 1.5rem;
+  position: relative;
+  top:0.5rem;
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.openNav .sidebar {
+		transform: translate3d(200px, 0, 0);
+   //transition: transform .10s cubic-bezier(0.77, 0, 0.175, 1);
+
+}
+
+.closeNav .sidebar {
+    width: 3rem;
+}
+
+
+@media screen and (max-width:650px){
+  .hamburger:after{
+    color: #2C3034;
+  }
+  .sidebar{
+    width: 100%;
+    min-height: auto;
+    max-height: auto;
+  }
+}
+
+
+
+
+
+

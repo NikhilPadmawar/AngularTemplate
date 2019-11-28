@@ -1,0 +1,33 @@
+<!-- <div [ngClass]="[bntStyle]">
+  <span class="hamburger mt-1 mb-3" (click)="toggle()"></span>
+    <ul class="sidebar" [ngClass]="[bntStyle]">
+      <li routerLinkActive="active"><a [routerLink]="['/main']">Home</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['/news']">News</a></li>
+      <li routerLinkActive="active"> <a class="submenu">
+          More
+        </a>
+        <div class="sidebar_dropdown-container">
+          <a>Link 1</a>
+          <a>Link 2</a>
+        </div>
+      </li>
+    </ul>
+</div> -->
+
+<div [ngClass]="[bntStyle]">
+  <span class="hamburger mt-1 mb-3" (click)="toggle()"></span>
+  <div class="sidebar" [ngClass]="[bntStyle]">
+    <!-- <a [routerLinkActive]="['active']" [routerLink]="['/', 'home']">Home</a> -->
+    <a [routerLinkActive]="['active']" [routerLink]="['/','home', 'main']">Home</a>
+    <a [routerLinkActive]="['active']" [routerLink]="['/', 'home', 'news']">News</a>
+    <a>About</a>
+    <a class="submenu">
+      More
+    </a>
+    <div class="sidebar_dropdown-container">
+      <a>Link 1</a>
+      <a>Link 2</a>
+      <a>Link 3</a>
+    </div>
+  </div>
+</div>

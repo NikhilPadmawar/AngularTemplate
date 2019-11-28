@@ -1,0 +1,35 @@
+.content{
+    display: flex;
+    min-height: 42.5rem;
+}
+
+.main{
+    flex: 1;
+    background-color:#f9f9f9;;
+}
+
+nav{
+    flex: 0;
+    background-color: #2C3034;
+    margin-right: 0.2rem;
+}
+
+@media screen and (max-width:650px){
+    .content{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:50px;
+        min-height: auto;
+    }
+    
+    .main{
+    grid-column: 1/-1;
+    background-color:#f9f9f9;;
+    }
+
+    nav{
+        grid-column: 1/-1;
+        grid-row: auto;
+        background-color: #f9f9f9;
+    }
+}

@@ -1,0 +1,124 @@
+<div class="slideBox">
+  <div class="left" *ngIf="right">
+    <div class="contentT">
+      <h2>SIGN UP</h2>
+      <form
+        [formGroup]="signUpForm"
+        class="form"
+        (submit)="signUp(signupForm)"
+        autocomplete="off"
+      >
+        <div class="form-group">
+          <input class="form-control"
+            type="text"
+            placeholder="username"
+            formControlName="username"
+            required
+          />
+          <div class="check"
+          *ngIf="
+            signUpForm.controls['username'].errors &&
+            (signUpForm.controls['username'].touched ||
+            signUpForm.controls['username'].dirty)
+          "
+          >Username is required</div
+        >
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="password"
+            formControlName="password"
+            required
+          />
+          <div class="check"
+          *ngIf="
+          signUpForm.controls['password'].errors &&
+            (signUpForm.controls['password'].touched ||
+            signUpForm.controls['password'].dirty)
+          "
+          >Password is required</div
+        >
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="confirm password"
+            formControlName="confirmpassword"
+            required
+          />
+          <div class="check"
+          *ngIf="
+          signUpForm.controls['confirmpassword'].errors &&
+            (signUpForm.controls['confirmpassword'].touched ||
+            signUpForm.controls['confirmpassword'].dirty)
+          "
+          >Password is required</div
+        >
+        </div>
+        <div class="form-group"></div>
+        <button id="click" type="submit" [disabled]="!signUpForm.valid">
+          Sign up
+        </button>
+        <button id="goLeft" class="off" (click)="goLeft()">
+          Login<span>&nbsp;&rarr;</span>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="right" *ngIf="right">
+    <div class="contentB">
+      <img class="right__style" src="assets/images/right.svg" />
+    </div>
+  </div>
+  <div class="right" *ngIf="left">
+    <div class="contentB">
+      <h2>LOGIN</h2>
+      <form [formGroup]="loginForm" (submit)="login()">
+        <div class="form-group">
+          <input
+            type="text"
+            placeholder="username"
+            formControlName="username"
+            required
+          />
+          <div class="check"
+            *ngIf="
+              loginForm.controls['username'].errors &&
+              (loginForm.controls['username'].touched ||
+                loginForm.controls['username'].dirty)
+            "
+            >Username is required</div
+          >
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="password"
+            formControlName="password"
+            required
+          />
+          <div class="check"
+            *ngIf="
+              loginForm.controls['password'].errors &&
+              (loginForm.controls['password'].touched ||
+                loginForm.controls['password'].dirty)
+            "
+            >Password is required</div
+          >
+        </div>
+        <button id="click" type="submit" [disabled]="!loginForm.valid">
+          Login
+        </button>
+        <button id="goRight" class="off" (click)="goRight()">
+          Sign Up<span>&nbsp;&rarr;</span>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="left" *ngIf="left">
+    <div class="contentT">
+      <img class="left__style" src="assets/images/left.svg" />
+    </div>
+  </div>
+</div>
